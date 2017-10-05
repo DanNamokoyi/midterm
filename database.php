@@ -1,5 +1,5 @@
 <?php
-    $dsn = 'mysql:host=localhost;dbname=shopDB'; //changed the dbname here to point to the correct database.
+    $dsn = 'mysql:host=localhost;dbname=tech_support'; //changed the dbname here to point to the correct database.
     $username = 'mgs_user';
     $password = 'pa55word';
 

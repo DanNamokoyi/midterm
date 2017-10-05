@@ -1,25 +1,11 @@
 <?php
     require_once('database.php');
 
-    // Get category ID
 
-
-    //***the commented lines below removed cause not needed in this example but maybe useful for next assignment one. 
-    // Get name for current category
-    //$query = "SELECT * FROM categories
-    //          WHERE categoryID = $category_id";
-    //$category = $db->query($query);
-    //$category = $category->fetch();
-    //$category_name = $category['categoryName'];
-
-    // Get all categories
-    //$query = 'SELECT * FROM categories
-    //          ORDER BY categoryID';
-    //$categories = $db->query($query);
-
-    // Get customer for selected category
-    $query = "SELECT firstName, lastName FROM customers order by lastName";
-    $customers = $db->query($query);
+    $query = "SELECT firstName, lastName, city FROM technicians order by lastName";
+    $technicians = $db->query($query);
+    
+  
 ?>
 
 
@@ -28,7 +14,7 @@
 
 <!-- the head section -->
 <head>
-    <title>My Guitar Shop</title>
+    <title>Technicians</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 
@@ -37,7 +23,7 @@
     <div id="page">
 
     <div id="header">
-        <h1>Customer Relations</h1>
+        <h1>Tech support</h1>
     </div>
 
     <div id="main">
@@ -52,12 +38,14 @@
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Town</th>
                 
                 </tr>
-                <?php foreach ($customers as $customer) : ?>
+                <?php foreach ($technicians as $technician) : ?>
                     <tr>
-                        <td><?php echo $customer['firstName']; ?></td>
-                        <td><?php echo $customer['lastName']; ?></td>
+                        <td><?php echo $technician['firstName']; ?></td>
+                        <td><?php echo $technician['lastName']; ?></td>
+                        <td><?php echo $technician['city']; ?></td>
                         
                     </tr>
                 <?php endforeach; ?>
